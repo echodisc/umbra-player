@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://ttkjuoktaedevnapduds.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d0f14">
+<title>Sign in to Umbra on your TV</title>
+<link rel="stylesheet" href="page.css">
+<script type="module" src="page.mjs"></script>
+</head>
+<body>
+<main>
+  <p class="brand">Umbra Player</p>
+  <h1>Sign in to Umbra on your TV. Nothing to install.</h1>
+  <p class="lead">Sign in here with your Umbra account and your TV signs in too. Your password is locked so that only that TV can open it.</p>
+  <p class="code-line" id="code-line" hidden>Code on your TV: <strong id="code-small"></strong></p>
+
+  <noscript><p class="error">This page needs JavaScript. Turn it on in your browser and open the page again.</p></noscript>
+
+  <!-- (a) no code in the link: type it -->
+  <section id="s-code" hidden>
+    <h2>Type the code from your TV</h2>
+    <form id="f-code" method="post" novalidate>
+      <label for="code-input">Code (8 letters and numbers)</label>
+      <input id="code-input" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="12" placeholder="ABCD EFGH" required>
+      <p class="error" role="alert" hidden></p>
+      <button type="submit" class="primary">Continue</button>
+    </form>
+  </section>
+
+  <!-- (b) sign in -->
+  <section id="s-signin" hidden>
+    <h2>Sign in</h2>
+    <form id="f-signin" method="post" novalidate>
+      <label for="si-email">Email</label>
+      <input id="si-email" type="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" required>
+      <label for="si-password">Password</label>
+      <input id="si-password" type="password" autocomplete="current-password" required>
+      <p class="error" role="alert" hidden></p>
+      <button type="submit" class="primary">Sign in</button>
+    </form>
+    <button type="button" class="link" id="to-signup">No account yet? Create one</button>
+  </section>
+
+  <!-- (c) create account -->
+  <section id="s-signup" hidden>
+    <h2>Create an account</h2>
+    <form id="f-signup" method="post" novalidate>
+      <label for="su-name">What should we call you? <span class="optional">(optional)</span></label>
+      <input id="su-name" type="text" autocomplete="nickname" maxlength="40">
+      <label for="su-email">Email</label>
+      <input id="su-email" type="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" required>
+      <label for="su-password">Password</label>
+      <input id="su-password" type="password" autocomplete="new-password" required>
+      <label for="su-confirm">Confirm password</label>
+      <input id="su-confirm" type="password" autocomplete="new-password" required>
+      <label for="su-access">Access code</label>
+      <p class="hint">Umbra is invite-only. Enter the code you were given.</p>
+      <input id="su-access" type="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" required>
+      <p class="error" role="alert" hidden></p>
+      <button type="submit" class="primary">Create account</button>
+    </form>
+    <button type="button" class="link" id="to-signin">Already have an account? Sign in</button>
+  </section>
+
+  <!-- (d) signed in, not activated -->
+  <section id="s-activate" hidden>
+    <h2>Access code</h2>
+    <p>Umbra is invite-only. Enter the access code you were given to unlock your account.</p>
+    <form id="f-activate" method="post" novalidate>
+      <label for="ac-code">Access code</label>
+      <input id="ac-code" type="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" required>
+      <p class="error" role="alert" hidden></p>
+      <button type="submit" class="primary">Unlock</button>
+    </form>
+    <button type="button" class="link" id="ac-other">Use another account</button>
+  </section>
+
+  <!-- (e) confirm -->
+  <section id="s-confirm" hidden>
+    <h2>Does your TV show this code?</h2>
+    <p class="big-code" id="code-big" aria-live="polite"></p>
+    <p class="warning">Only connect a TV you can see in front of you.</p>
+    <p class="error" role="alert" hidden></p>
+    <div class="actions">
+      <button type="button" class="primary" id="connect">Connect</button>
+      <button type="button" class="secondary" id="cancel">Cancel</button>
+    </div>
+  </section>
+
+  <!-- (f) done -->
+  <section id="s-done" hidden>
+    <h2 class="ok">Done.</h2>
+    <p>Your TV is signing in now. You can close this page.</p>
+  </section>
+
+  <!-- signed up, email confirmation needed -->
+  <section id="s-email" hidden>
+    <h2>Check your email</h2>
+    <p>We sent you a link to confirm your account. Open it, then scan the code on your TV again.</p>
+  </section>
+
+  <!-- cancelled -->
+  <section id="s-cancelled" hidden>
+    <h2>Cancelled</h2>
+    <p>Nothing was sent to your TV. You can close this page.</p>
+  </section>
+
+  <!-- (g) errors that end the visit -->
+  <section id="s-stop" hidden>
+    <h2>That did not work</h2>
+    <p class="error" id="stop-message" role="alert"></p>
+  </section>
+
+  <p class="foot">Made by EchoDisc. <a href="../privacy.html">Privacy policy</a></p>
+</main>
+</body>
+</html>
