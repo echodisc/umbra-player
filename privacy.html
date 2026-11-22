@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Umbra Player privacy policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1a1d24;
+    --ink-soft: #444b59;
+    --muted: #6b7385;
+    --line: #dfe3ea;
+    --panel: #f4f6f9;
+    --link: #0b63c5;
+    --accent: #0b63c5;
+    --accent-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0f14;
+      --ink: #e8ecf5;
+      --ink-soft: #c3cad8;
+      --muted: #8a93a6;
+      --line: #262b37;
+      --panel: #151922;
+      --link: #5cb8ff;
+      --accent: #2f8fdf;
+      --accent-ink: #ffffff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.25rem; line-height: 1.3; margin: 36px 0 8px; }
+  h3 { font-size: 1.05rem; margin: 24px 0 6px; }
+  p, li { color: var(--ink-soft); }
+  strong { color: var(--ink); }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--link); overflow-wrap: anywhere; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+  code {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 1px 5px;
+    font-size: 0.9em;
+  }
+  .table { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink); background: var(--panel); }
+  td { color: var(--ink-soft); }
+  .box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 4px 18px 10px;
+    margin: 20px 0;
+  }
+  .box h2 { margin-top: 16px; }
+  .steps li { margin: 10px 0; }
+  .button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+  }
+  .meta { color: var(--muted); font-size: 0.9rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Umbra Player — Privacy Policy</h1>
+<p><strong>Last updated: 22 November 2026</strong></p>
+<p>Umbra Player ("Umbra" in the app) is a media player for Android, made by <strong>EchoDisc</strong>. It plays streams and files from sources <strong>you</strong> already have: your own IPTV playlist (M3U or Xtream), or your own server or cloud storage. Umbra does not provide, host, index, recommend or search for any content of its own. Everything you see in the app comes from a source you added yourself.</p>
+<p>This policy explains what happens to your data. It is short because Umbra collects very little.</p>
+<hr>
+<h2>The short version</h2>
+<ul>
+  <li>You can use Umbra <strong>without an account</strong>. Your playlists, favorites and history then stay on your device. The app still asks our server for artwork by film or series title; without an account the server refuses and stores nothing (see "Using Umbra without an account").</li>
+  <li>If you create an account, we store your <strong>email address</strong> and the things you choose to sync (favorites, watch progress and similar).</li>
+  <li>Your <strong>playlist and server logins are encrypted on your device</strong> before they are uploaded. We cannot read them.</li>
+  <li>There are <strong>no ads, no analytics, no trackers, and no advertising SDKs</strong> in Umbra. We do not sell or share your data.</li>
+</ul>
+<hr>
+<h2>Using Umbra without an account</h2>
+<p>When you choose <strong>"Continue without account"</strong> on the welcome screen, your sources, favorites, watch progress and settings are stored only in the app's private storage on your device. Uninstall the app and that data is gone.</p>
+<p>One thing still reaches our server in this mode. To find artwork and descriptions, the app sends the <strong>title (and year) of films and series</strong> from your playlist to our server, as described under "Artwork, descriptions and subtitles" below. Without an account the server refuses these requests and they return nothing. They carry no name, email or account, and nothing is stored about you. The only record is our hosting provider's routine technical log (see "How long we keep data").</p>
+<h2>If you create an account</h2>
+<p>Accounts are optional. They exist so your library follows you between devices. When you create one, we store:</p>
+<div class="table"><table>
+<thead><tr><th>What</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Your email address</td><td>To identify your account and sign you in</td></tr>
+<tr><td>Your source configurations, <strong>encrypted</strong> (see below)</td><td>So your playlists appear on your other devices</td></tr>
+<tr><td>Favorites and favorite folders, watch progress and watch history, hidden groups, collections, and interface preferences</td><td>So they follow you between devices</td></tr>
+<tr><td>Profile names and avatars you create</td><td>So the household profile picker works</td></tr>
+<tr><td>A kids PIN, if you set one, stored only as a one-way hash</td><td>So the parental lock works without us knowing your PIN</td></tr>
+<tr><td>When you pair a TV with your phone: an encrypted package for the TV, usable once and only for 10 minutes</td><td>So the TV can receive your setup. We cannot read it.</td></tr>
+</tbody></table></div>
+<p>Accounts are handled by <strong>Supabase</strong>, which hosts our database, sign-in and server functions. Supabase acts as our data processor. All traffic between the app and our servers uses HTTPS.</p>
+<h3>Your source logins are encrypted so only your devices can read them</h3>
+<p>This is the part that matters most, so it is worth being precise.</p>
+<p>When you add a playlist or server, Umbra encrypts the whole configuration — including the server address, username and password — <strong>on your device</strong>, using a key derived from your account password. Only the encrypted result is uploaded.</p>
+<p>The key never leaves your device. Your account password is sent to our sign-in service when you sign in, as with any email-and-password login, but it is not stored in readable form and the key is never stored on our side. That means <strong>we cannot decrypt your stored sources, and neither can anyone who obtains a copy of our database.</strong> The trade-off is real and you should know about it: if you lose your account password, your stored source configurations cannot be recovered by us.</p>
+<h2>What we do not do</h2>
+<ul>
+  <li>No advertising, and no advertising or attribution SDKs.</li>
+  <li>No analytics or usage tracking. We do not measure what you watch.</li>
+  <li>No crash-reporting SDK.</li>
+  <li>No advertising ID, device ID, IMEI, contacts, location, microphone or camera access. Umbra asks only for network access.</li>
+  <li>We do not sell your personal information, and we do not share it with third parties for their own purposes.</li>
+</ul>
+<h2>Other services the app talks to</h2>
+<ul>
+  <li><strong>Your own sources.</strong> Your playlist provider, server or cloud storage receives your requests and logins directly from the app, exactly as it would with any player. Their privacy practices are their own.</li>
+  <li><strong>Artwork, descriptions and subtitles — TMDB, OMDb and OpenSubtitles.</strong> The app does not talk to these services' data interfaces directly. It sends the request (a film or series title, or a subtitle search) to <strong>our server</strong>, together with your sign-in token if you are signed in. Our server checks that you are signed in, adds our own key for the service, passes the request on, and passes the answer back. It does not send your name, email or account to these services. Its log line holds only the request's path (for example "search/movie", or a film's TMDB number) and whether it worked — never the search words and never who asked. Without an account the request is refused before it goes anywhere. The pictures themselves (posters and backgrounds) are then loaded directly from those services' image servers, and a subtitle file directly from the download link OpenSubtitles gives. Those servers see your device's internet address, as any website would.</li>
+  <li><strong>Shared artwork cache.</strong> With an account, the artwork and descriptions found for a film or series are saved in a shared cache on our server, so that the next device does not have to look them up again. The cache holds details about the film (title, year, poster, plot and similar), never who looked it up, and it is not deleted with your account because it holds nothing about you.</li>
+  <li><strong>Trakt</strong>, only if you connect a Trakt account yourself. If you do, Umbra sends your playback activity (what you are watching and how far through) directly to Trakt so it can appear in your Trakt history. Disconnecting Trakt in Settings stops this. It is off unless you turn it on.</li>
+</ul>
+<p>Each of these services is governed by its own privacy policy.</p>
+<h2>Children</h2>
+<p>Umbra is not directed at children. The kids profile is a parental control for the account holder's household; it is not a separate service for children, and it does not cause us to collect anything extra.</p>
+<h2>How long we keep data</h2>
+<p>We keep your account data for as long as your account exists. Watch history is capped at about 5,000 entries per profile; older entries are removed automatically. A pairing package can only be used within 10 minutes.</p>
+<p>Our hosting provider keeps routine technical request logs (such as the time, the address that was requested, your device's internet address and the result) for a short time — about one day on our current plan — and then deletes them.</p>
+<p>When you delete your account, its data is deleted at once — see below.</p>
+<h2>Deleting your account and your data</h2>
+<p>You can delete your account and everything stored with it at any time.</p>
+<p><strong>In the app:</strong> open <strong>Settings</strong>, go to the <strong>Account</strong> section, tap <strong>Delete account</strong>, and confirm with <strong>Delete forever</strong>. The account and its data are deleted from our server immediately, and you are signed out.</p>
+<p><strong>On the web, without the app:</strong> follow the steps at <a href="https://echodisc.github.io/umbra-player/delete-account.html">https://echodisc.github.io/umbra-player/delete-account.html</a>.</p>
+<p><strong>By email:</strong> write to <strong><a href="mailto:business@echodisc.com">business@echodisc.com</a></strong> from the address your account uses, asking for deletion. We will delete the account and all its data within 30 days and confirm when it is done.</p>
+<p>Deleting your account removes your email and account record, your profiles, your encrypted source configurations, your favorites and favorite folders, watch progress and watch history, your hidden groups, collections, interface preferences and any pairing package. We keep no archive copy.</p>
+<p>What remains: if you ever typed a wrong invite code or paired a TV, a record of that attempt (a random account number and the time, without your email) can stay on our server. Once the account is deleted it no longer links to anyone. Routine technical logs are deleted after about a day.</p>
+<p>Deleting the account does not touch the app on your devices. Playlists you added on a device stay on that device until you remove them or uninstall Umbra, which deletes its local database and cached files.</p>
+<h2>Your rights</h2>
+<p>If you are in the EU/EEA or the UK, you have the right to access, correct, export, restrict or delete your personal data, and to object to processing. Write to the address below and we will act on it. You may also complain to your local data protection authority. Our legal basis for processing is the performance of our agreement with you (running your account) and your consent for optional integrations such as Trakt.</p>
+<h2>Changes</h2>
+<p>If this policy changes materially we will update the "last updated" date above and, for significant changes, note it in the app's release notes.</p>
+<h2>Contact</h2>
+<p>Umbra Player is made by <strong>EchoDisc</strong>.</p>
+<p>Questions, requests, or data-deletion requests: <strong><a href="mailto:business@echodisc.com">business@echodisc.com</a></strong></p>
+</main>
+</body>
+</html>
