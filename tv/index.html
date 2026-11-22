@@ -39,7 +39,7 @@
       <label for="si-email">Email</label>
       <input id="si-email" type="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" required>
       <label for="si-password">Password</label>
-      <input id="si-password" type="password" autocomplete="current-password" required>
+      <div class="pw"><input id="si-password" type="password" autocomplete="current-password" required><button type="button" class="reveal" data-for="si-password" aria-pressed="false" aria-label="Show password">Show</button></div>
       <p class="error" role="alert" hidden></p>
       <button type="submit" class="primary">Sign in</button>
     </form>
@@ -55,9 +55,9 @@
       <label for="su-email">Email</label>
       <input id="su-email" type="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" required>
       <label for="su-password">Password</label>
-      <input id="su-password" type="password" autocomplete="new-password" required>
+      <div class="pw"><input id="su-password" type="password" autocomplete="new-password" required><button type="button" class="reveal" data-for="su-password" aria-pressed="false" aria-label="Show password">Show</button></div>
       <label for="su-confirm">Confirm password</label>
-      <input id="su-confirm" type="password" autocomplete="new-password" required>
+      <div class="pw"><input id="su-confirm" type="password" autocomplete="new-password" required><button type="button" class="reveal" data-for="su-confirm" aria-pressed="false" aria-label="Show password">Show</button></div>
       <label for="su-access">Access code</label>
       <p class="hint">Umbra is invite-only. Enter the code you were given.</p>
       <input id="su-access" type="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" required>

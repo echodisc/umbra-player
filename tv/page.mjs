@@ -108,8 +108,29 @@ async function stop(text) {
 function forgetSecrets() {
   state.password = null;
   state.sealed = null;
-  for (const id of ['si-password', 'su-password', 'su-confirm']) input(id).value = '';
+  for (const id of ['si-password', 'su-password', 'su-confirm']) {
+    input(id).value = '';
+    setRevealed(id, false);
+  }
 }
+
+/** Shows or hides one password field's text, and labels its button. */
+function setRevealed(id, on) {
+  input(id).type = on ? 'text' : 'password';
+  const button = document.querySelector(`button.reveal[data-for="${id}"]`);
+  if (!button) return;
+  button.textContent = on ? 'Hide' : 'Show';
+  button.setAttribute('aria-pressed', String(on));
+  button.setAttribute('aria-label', on ? 'Hide password' : 'Show password');
+}
+
+// Passwords start hidden; Show / Hide beside each one (Edin, 22 Nov).
+document.addEventListener('click', (event) => {
+  const button = event.target instanceof Element ? event.target.closest('button.reveal') : null;
+  if (!button) return;
+  const id = button.getAttribute('data-for');
+  if (id) setRevealed(id, input(id).type === 'password');
+});
 
 /** Disables every button while a request runs. @param {boolean} on */
 function setBusy(on) {
