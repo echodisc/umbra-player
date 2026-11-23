@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://ttkjuoktaedevnapduds.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d0f14">
+<title>Reset your Umbra password</title>
+<link rel="stylesheet" href="page.css">
+<script type="module" src="page.mjs"></script>
+</head>
+<body>
+<main>
+  <p class="brand">Umbra Player</p>
+
+  <noscript><p class="error">This page needs JavaScript. Turn it on in your browser and open the page again.</p></noscript>
+
+  <!-- from the reset email's link -->
+  <section id="s-set" hidden>
+    <h1>Choose a new password</h1>
+    <form id="f-set" method="post" novalidate>
+      <label for="new-password">New password</label>
+      <div class="pw"><input id="new-password" type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" required><button type="button" class="reveal" id="reveal" aria-pressed="false" aria-label="Show password">Show</button></div>
+      <p class="warning">Your playlist logins may need typing again.</p>
+      <p class="error" id="set-error" role="alert" hidden></p>
+      <button type="submit" class="primary" id="save">Save password</button>
+    </form>
+  </section>
+
+  <section id="s-done" hidden>
+    <h1 class="ok">Password changed.</h1>
+    <p>Sign in to Umbra with your new password.</p>
+  </section>
+
+  <section id="s-expired" hidden>
+    <h1>This link has expired</h1>
+    <p>Links work once, for an hour.</p>
+    <button type="button" class="primary" id="new-link">Send a new link</button>
+  </section>
+
+  <!-- opened without a link, or from "Send a new link" -->
+  <section id="s-request" hidden>
+    <h1>Reset your password</h1>
+    <form id="f-request" method="post" novalidate>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" inputmode="email" required>
+      <p class="error" id="request-error" role="alert" hidden></p>
+      <button type="submit" class="primary" id="send">Send link</button>
+    </form>
+  </section>
+
+  <section id="s-sent" hidden>
+    <h1>Check your inbox</h1>
+    <p>If <span class="addr" id="sent-email"></span> has an Umbra account, a link is on its way.</p>
+  </section>
+
+  <p class="foot">Made by EchoDisc. <a href="../privacy.html">Privacy policy</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://ttkjuoktaedevnapduds.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d0f14">
+<title>Umbra: email confirmed</title>
+<link rel="stylesheet" href="page.css">
+<script type="module" src="page.mjs"></script>
+</head>
+<body>
+<main>
+  <p class="brand">Umbra Player</p>
+
+  <noscript><p class="error">This page needs JavaScript. Turn it on in your browser and open the page again.</p></noscript>
+
+  <section id="s-working" hidden>
+    <p role="status">Confirming…</p>
+  </section>
+
+  <section id="s-ok" hidden>
+    <h1 class="ok">Your email is confirmed.</h1>
+    <p>Go back to Umbra.</p>
+  </section>
+
+  <section id="s-done" hidden>
+    <h1>Done.</h1>
+    <p>Go back to Umbra.</p>
+  </section>
+
+  <section id="s-expired" hidden>
+    <h1>This link has expired or was used already.</h1>
+    <p>Open Umbra and sign in.</p>
+  </section>
+
+  <!-- no answer, or the server failed: the link is still good -->
+  <section id="s-error" hidden>
+    <p class="error" id="error-message" role="alert"></p>
+    <button type="button" class="primary" id="again">Try again</button>
+  </section>
+
+  <p class="foot">Made by EchoDisc. <a href="../privacy.html">Privacy policy</a></p>
+</main>
+</body>
+</html>
