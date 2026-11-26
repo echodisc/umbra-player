@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://ttkjuoktaedevnapduds.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d0f14">
+<title>Add a playlist to Umbra on your TV</title>
+<link rel="stylesheet" href="page.css">
+<script type="module" src="page.mjs"></script>
+</head>
+<body>
+<main>
+  <p class="brand"><span class="mark" aria-hidden="true"></span>Umbra</p>
+
+  <noscript><p class="error">This page needs JavaScript. Turn it on in your browser and open the page again.</p></noscript>
+
+  <!-- opened by the QR: the code is being looked up -->
+  <section id="s-check" hidden>
+    <h1>Add a playlist to your TV</h1>
+    <p class="status" id="check-status" role="status">Checking the code on your TV…</p>
+    <p class="error" id="check-error" role="alert" hidden></p>
+    <button type="button" class="plain" id="check-again" hidden>Try again</button>
+  </section>
+
+  <!-- opened with no code in the address: type it -->
+  <section id="s-code" hidden>
+    <h1>Add a playlist to your TV</h1>
+    <form id="f-code" method="post" novalidate>
+      <label for="code-input">The code on your TV</label>
+      <input id="code-input" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" maxlength="12" placeholder="ABCD EFGH" aria-describedby="code-error">
+      <p class="error" id="code-error" role="alert" hidden></p>
+      <button type="submit" class="primary" id="code-go">Continue</button>
+    </form>
+  </section>
+
+  <!-- the provider's details -->
+  <section id="s-form" hidden>
+    <h1>Add a playlist to your TV</h1>
+    <div class="codebox"><span class="codebox-label">Your TV shows</span><strong class="code" id="form-code"></strong></div>
+    <p class="only">Check that your TV shows this code. Only send to a TV you can see in front of you.</p>
+    <form id="f-add" method="post" novalidate>
+      <div class="seg" role="group" aria-label="Kind of playlist">
+        <button type="button" id="kind-xtream" aria-pressed="true">Xtream</button>
+        <button type="button" id="kind-m3u" aria-pressed="false">M3U link</button>
+      </div>
+      <div class="fields" id="xt-fields">
+        <label for="xt-server">Server address</label>
+        <input id="xt-server" type="text" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="xt-server-error">
+        <p class="split" id="xt-split" role="status" hidden>Split into server, user name and password.</p>
+        <p class="error" id="xt-server-error" role="alert" hidden></p>
+        <label for="xt-user">User name</label>
+        <input id="xt-user" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="xt-user-error">
+        <p class="error" id="xt-user-error" role="alert" hidden></p>
+        <label for="xt-pass">Password</label>
+        <div class="pw"><input id="xt-pass" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="xt-pass-error"><button type="button" class="reveal" id="xt-reveal" aria-pressed="false" aria-label="Show password">Show</button></div>
+        <p class="error" id="xt-pass-error" role="alert" hidden></p>
+      </div>
+      <div class="fields" id="m3u-fields" hidden>
+        <label for="m3u-url">Playlist address</label>
+        <input id="m3u-url" type="text" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="m3u-url-error">
+        <p class="error" id="m3u-url-error" role="alert" hidden></p>
+      </div>
+      <p class="error" id="add-error" role="alert" hidden></p>
+      <button type="submit" class="primary" id="add-go">Add to my TV</button>
+    </form>
+  </section>
+
+  <section id="s-sent" hidden>
+    <div class="ring" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+    <h1>Sent</h1>
+    <p class="body">Look at your TV. It checks the details with your provider and adds the playlist by itself.</p>
+    <p class="quiet lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9.5" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Your details travelled locked. Only your TV can open them.</span></p>
+    <button type="button" class="plain" id="send-again">Change something and send again</button>
+    <p class="quiet">You can close this page when your TV shows your channels.</p>
+  </section>
+
+  <!-- the visit ends here: the code ended, the key is wrong, too many tries, an old browser -->
+  <section id="s-stop" hidden>
+    <div class="ring" aria-hidden="true">
+      <span id="stop-clock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span>
+      <span id="stop-alert" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.6v.01"/></svg></span>
+    </div>
+    <h1 id="stop-title"></h1>
+    <p class="body" id="stop-line" role="alert"></p>
+  </section>
+
+  <p class="foot">Made by EchoDisc. <a href="../privacy.html">Privacy policy</a></p>
+</main>
+</body>
+</html>
