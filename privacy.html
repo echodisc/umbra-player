@@ -84,7 +84,7 @@
 <body>
 <main>
 <h1>Umbra Player — Privacy Policy</h1>
-<p><strong>Last updated: 22 November 2026</strong></p>
+<p><strong>Last updated: 23 November 2026</strong></p>
 <p>Umbra Player ("Umbra" in the app) is a media player for Android, made by <strong>EchoDisc</strong>. It plays streams and files from sources <strong>you</strong> already have: your own IPTV playlist (M3U or Xtream), or your own server or cloud storage. Umbra does not provide, host, index, recommend or search for any content of its own. Everything you see in the app comes from a source you added yourself.</p>
 <p>This policy explains what happens to your data. It is short because Umbra collects very little.</p>
 <hr>
@@ -104,7 +104,7 @@
 <div class="table"><table>
 <thead><tr><th>What</th><th>Why</th></tr></thead>
 <tbody>
-<tr><td>Your email address</td><td>To identify your account and sign you in</td></tr>
+<tr><td>Your email address</td><td>To identify your account, sign you in, and send the two emails an account needs: a link to confirm your address when you sign up, and a password-reset link when you ask for one</td></tr>
 <tr><td>Your source configurations, <strong>encrypted</strong> (see below)</td><td>So your playlists appear on your other devices</td></tr>
 <tr><td>Favorites and favorite folders, watch progress and watch history, hidden groups, collections, and interface preferences</td><td>So they follow you between devices</td></tr>
 <tr><td>Profile names and avatars you create</td><td>So the household profile picker works</td></tr>
@@ -112,10 +112,11 @@
 <tr><td>When you pair a TV with your phone: an encrypted package for the TV, usable once and only for 10 minutes</td><td>So the TV can receive your setup. We cannot read it.</td></tr>
 </tbody></table></div>
 <p>Accounts are handled by <strong>Supabase</strong>, which hosts our database, sign-in and server functions. Supabase acts as our data processor. All traffic between the app and our servers uses HTTPS.</p>
+<p><strong>Account emails.</strong> A new account confirms its email address: we send one email with a link, and the account can sign in once that link is opened. If you forget your password, ask for a reset link in the app (<strong>Forgot password?</strong> on the sign-in screen) or at <a href="https://echodisc.github.io/umbra-player/reset/">https://echodisc.github.io/umbra-player/reset/</a>. These emails come from <strong>umbra@echodisc.com</strong> and are sent through <strong>Simply.com</strong>, our email provider, which acts as our data processor for them. We send no newsletters or marketing email.</p>
 <h3>Your source logins are encrypted so only your devices can read them</h3>
 <p>This is the part that matters most, so it is worth being precise.</p>
 <p>When you add a playlist or server, Umbra encrypts the whole configuration — including the server address, username and password — <strong>on your device</strong>, using a key derived from your account password. Only the encrypted result is uploaded.</p>
-<p>The key never leaves your device. Your account password is sent to our sign-in service when you sign in, as with any email-and-password login, but it is not stored in readable form and the key is never stored on our side. That means <strong>we cannot decrypt your stored sources, and neither can anyone who obtains a copy of our database.</strong> The trade-off is real and you should know about it: if you lose your account password, your stored source configurations cannot be recovered by us.</p>
+<p>The key never leaves your device. Your account password is sent to our sign-in service when you sign in, as with any email-and-password login, but it is not stored in readable form and the key is never stored on our side. That means <strong>we cannot decrypt your stored sources, and neither can anyone who obtains a copy of our database.</strong> The trade-off is real and you should know about it: you can reset a forgotten account password, but a reset cannot unlock the source configurations encrypted with the old one, and neither can we. After a reset you enter those playlist and server logins again.</p>
 <h2>What we do not do</h2>
 <ul>
   <li>No advertising, and no advertising or attribution SDKs.</li>
@@ -142,7 +143,7 @@
 <p>You can delete your account and everything stored with it at any time.</p>
 <p><strong>In the app:</strong> open <strong>Settings</strong>, go to the <strong>Account</strong> section, tap <strong>Delete account</strong>, and confirm with <strong>Delete forever</strong>. The account and its data are deleted from our server immediately, and you are signed out.</p>
 <p><strong>On the web, without the app:</strong> follow the steps at <a href="https://echodisc.github.io/umbra-player/delete-account.html">https://echodisc.github.io/umbra-player/delete-account.html</a>.</p>
-<p><strong>By email:</strong> write to <strong><a href="mailto:business@echodisc.com">business@echodisc.com</a></strong> from the address your account uses, asking for deletion. We will delete the account and all its data within 30 days and confirm when it is done.</p>
+<p><strong>By email:</strong> write to <strong><a href="mailto:umbra.privacy@echodisc.com">umbra.privacy@echodisc.com</a></strong> from the address your account uses, asking for deletion. We will delete the account and all its data within 30 days and confirm when it is done.</p>
 <p>Deleting your account removes your email and account record, your profiles, your encrypted source configurations, your favorites and favorite folders, watch progress and watch history, your hidden groups, collections, interface preferences and any pairing package. We keep no archive copy.</p>
 <p>What remains: if you ever typed a wrong invite code or paired a TV, a record of that attempt (a random account number and the time, without your email) can stay on our server. Once the account is deleted it no longer links to anyone. Routine technical logs are deleted after about a day.</p>
 <p>Deleting the account does not touch the app on your devices. Playlists you added on a device stay on that device until you remove them or uninstall Umbra, which deletes its local database and cached files.</p>
@@ -152,7 +153,7 @@
 <p>If this policy changes materially we will update the "last updated" date above and, for significant changes, note it in the app's release notes.</p>
 <h2>Contact</h2>
 <p>Umbra Player is made by <strong>EchoDisc</strong>.</p>
-<p>Questions, requests, or data-deletion requests: <strong><a href="mailto:business@echodisc.com">business@echodisc.com</a></strong></p>
+<p>Questions and support: <strong><a href="mailto:umbra.support@echodisc.com">umbra.support@echodisc.com</a></strong>. Privacy questions and data-deletion requests: <strong><a href="mailto:umbra.privacy@echodisc.com">umbra.privacy@echodisc.com</a></strong>.</p>
 </main>
 </body>
 </html>
