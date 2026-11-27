@@ -15,8 +15,8 @@
 <body>
 <main>
   <p class="brand">Umbra Player</p>
-  <h1>Sign in to Umbra on your TV. Nothing to install.</h1>
-  <p class="lead">Sign in here with your Umbra account and your TV signs in too. Your password is locked so that only that TV can open it.</p>
+  <h1>Sign in to Umbra on your TV</h1>
+  <p class="lead">Sign in here and your TV signs in too. Only that TV can open your password.</p>
   <p class="code-line" id="code-line" hidden>Code on your TV: <strong id="code-small"></strong></p>
 
   <noscript><p class="error">This page needs JavaScript. Turn it on in your browser and open the page again.</p></noscript>
@@ -25,7 +25,7 @@
   <section id="s-code" hidden>
     <h2>Type the code from your TV</h2>
     <form id="f-code" method="post" novalidate>
-      <label for="code-input">Code (8 letters and numbers)</label>
+      <label for="code-input">The code on your TV</label>
       <input id="code-input" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="12" placeholder="ABCD EFGH" required>
       <p class="error" role="alert" hidden></p>
       <button type="submit" class="primary">Continue</button>
@@ -70,7 +70,7 @@
   <!-- (d) signed in, not activated -->
   <section id="s-activate" hidden>
     <h2>Access code</h2>
-    <p>Umbra is invite-only. Enter the access code you were given to unlock your account.</p>
+    <p>Umbra is invite-only. Enter the access code you were given.</p>
     <form id="f-activate" method="post" novalidate>
       <label for="ac-code">Access code</label>
       <input id="ac-code" type="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" required>
@@ -95,7 +95,7 @@
   <!-- (f) done -->
   <section id="s-done" hidden>
     <h2 class="ok">Done.</h2>
-    <p>Your TV is signing in now. You can close this page.</p>
+    <p>Your TV is signing in. You can close this page.</p>
   </section>
 
   <!-- signed up, email confirmation needed -->
